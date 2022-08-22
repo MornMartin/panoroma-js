@@ -151,12 +151,12 @@ export default class PanoromaEquirectangular {
      */
     private dispatchMarkEvent(type: 'mousemove' | 'click', intersects: TIntersects) {
         const eventSource = this.getEventSoure(intersects);
-        if(this.activeMarkMesh === eventSource && type === 'mousemove') {
-            return this.activeMarkMesh;
-        }
-        if(this.activeMarkMesh === eventSource && type === 'click') {
+        if(type === 'click') {
             eventSource && this.reactMarkEvent('click', eventSource);
             return this.activeMarkMesh = eventSource;
+        }
+        if(this.activeMarkMesh === eventSource && type === 'mousemove') {
+            return this.activeMarkMesh;
         }
         if(this.activeMarkMesh !== eventSource && type === 'mousemove') {
             eventSource && this.reactMarkEvent('mouseover', eventSource);
