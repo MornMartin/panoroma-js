@@ -1,6 +1,8 @@
-import PanoromaCube from "./PanoromaCube";
-import PanoromaEquirectangular from "./PanoromaEquirectangular";
+import Equirectangular from "./Equirectangular";
+const VERSION = require('../version.js');
+export { IGlobalConfig, ISceneConfig, ISceneMarkConfig } from './Equirectangular';
+export { Equirectangular };
 export default {
-    PanoromaCube,
-    PanoromaEquirectangular,
+    Equirectangular,
+    VERSION,
 }
